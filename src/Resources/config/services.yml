@@ -20,3 +20,9 @@ services:
 
   VuillaumeAgency\TurnstileBundle\Http\TurnstileHttpClientInterface:
     alias: turnstile.http_client
+
+  turnstile.submit_extension:
+    class: VuillaumeAgency\TurnstileBundle\Form\Extension\TurnstileSubmitExtension
+    tags: ['form.type_extension']
+    arguments:
+      $enable: '%vuillaume_agency_turnstile.enable%'
