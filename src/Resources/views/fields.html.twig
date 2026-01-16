@@ -7,9 +7,11 @@
         <div id="{{ widget_id }}"
              class="cf-turnstile"
              data-sitekey="{{ key }}"
+             {% if disable_submit_until_verified %}
              data-callback="{{ widget_id }}_onSuccess"
              data-error-callback="{{ widget_id }}_onError"
              data-expired-callback="{{ widget_id }}_onExpired"
+             {% endif %}
              {% for attrKey, attribute in attributes %}{{ attrKey|e }}="{{ attribute }}" {% endfor %}>
         </div>
 
