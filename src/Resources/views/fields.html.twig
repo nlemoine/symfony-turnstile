@@ -13,6 +13,7 @@
              {% for attrKey, attribute in attributes %}{{ attrKey|e }}="{{ attribute }}" {% endfor %}>
         </div>
 
+        {% if disable_submit_until_verified %}
         <script>
             (function() {
                 function initTurnstile() {
@@ -57,5 +58,6 @@
                 }
             })();
         </script>
+        {% endif %}
     {% endif %}
 {% endblock %}
